@@ -1,0 +1,28 @@
+---
+layout: default
+---
+<section class="alb-intro">
+  <div class="wrap">
+    <p class="alb-eyebrow">Transmission Log</p>
+    <h1 class="alb-title">{{ site.title }}</h1>
+    <p class="alb-lede">{{ site.description }}</p>
+  </div>
+</section>
+
+<section class="alb-archive">
+  <div class="wrap">
+    <p class="alb-section-label">All transmissions</p>
+    <ul class="alb-list">
+      {% for post in site.posts %}
+      <li>
+        <a class="alb-list-row" href="{{ post.url | relative_url }}">
+          <span class="alb-list-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+          <span class="alb-list-title">{{ post.title }}</span>
+          {% if post.author %}<span class="alb-list-byline">{{ post.author }}</span>{% endif %}
+          <span class="alb-list-arrow">→</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
