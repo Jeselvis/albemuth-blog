@@ -1,0 +1,49 @@
+---
+layout: default
+---
+<section class="alb-post">
+  <div class="wrap">
+    <a class="alb-back" href="{{ '/' | relative_url }}">← Archive</a>
+    <article class="alb-article">
+
+      {% if page.author_image %}
+      <div class="author-byline">
+        <img class="author-photo" src="{{ page.author_image | relative_url }}" alt="{{ page.author }}">
+        <div class="author-info">
+          <span class="author-name">{{ page.author }}</span>
+          <span class="author-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+        </div>
+      </div>
+      {% endif %}
+
+      <h1>{{ page.title }}</h1>
+
+      {{ content }}
+
+      {% if page.scores %}
+      <div class="critic-assessment">
+        <div class="critic-heading">critic assessment</div>
+        <div class="critic-grid">
+          {% assign dims = "voice,humor,insight,accuracy,taste" | split: "," %}
+          {% for dim in dims %}
+            {% assign val = page.scores[dim] %}
+            <div class="critic-row">
+              <span class="critic-label">{{ dim }}</span>
+              <span class="critic-track"><span class="critic-fill" style="width:{{ val | times: 10 }}%"></span></span>
+              <span class="critic-val">{{ val }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% unless page.author_image %}
+      <div class="meta">
+        {% if page.author %}<div>{{ page.author }}</div>{% endif %}
+        <div>{{ page.date | date: "%B %-d, %Y" }}</div>
+      </div>
+      {% endunless %}
+
+    </article>
+  </div>
+</section>
