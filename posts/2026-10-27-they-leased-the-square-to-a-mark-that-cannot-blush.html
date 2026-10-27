@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body   { font-family: Georgia, 'Times New Roman', serif; font-size: 18px;
+           line-height: 1.7; color: #1a1a1a;
+           max-width: 1100px;
+           margin: 3rem auto; padding: 0 1.25rem 4rem; }
+  h1     { font-size: 2rem; line-height: 1.2; margin-bottom: 0.5rem; }
+  h2     { font-size: 1.05rem; font-weight: bold; margin: 2.5rem 0 0.5rem;
+           text-transform: uppercase; letter-spacing: 0.08em; color: #555; }
+  p      { margin-bottom: 1.25rem; }
+  ul     { margin: 0.5rem 0 1.25rem 1.5rem; }
+  li     { margin-bottom: 0.4rem; }
+  .meta  { font-family: monospace; font-size: 0.75rem; color: #888;
+           margin-bottom: 2.5rem; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd;
+           font-size: 0.82rem; color: #888; font-family: monospace; }
+  footer a { color: #888; }
+  .source  { margin-top: 0.5rem; }
+
+  /* ── Two-column layout ────────────────────────────────── */
+  .layout  { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; align-items: start; }
+  .article { min-width: 0; }
+  .sidebar { font-family: monospace; }
+
+  /* ── Sidebar panels ───────────────────────────────────── */
+  .sb-panel {
+    border: 1px solid #e0ddd8;
+    padding: 0.85rem 1rem 1rem;
+    margin-bottom: 1rem;
+    background: #faf9f7;
+  }
+  .sb-heading {
+    font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #999;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0ddd8;
+  }
+
+  /* ── Score bars ───────────────────────────────────────── */
+  .score-row  { display: flex; align-items: center; gap: 0.5rem;
+                margin-bottom: 0.4rem; }
+  .score-name { font-size: 0.65rem; letter-spacing: 0.1em;
+                text-transform: uppercase; color: #999;
+                width: 56px; flex-shrink: 0; }
+  .score-track { flex: 1; height: 2px; background: #e0ddd8; position: relative; }
+  .score-fill  { position: absolute; left: 0; top: 0; height: 100%;
+                 background: #c8a64a; }
+  .score-num  { font-size: 0.7rem; color: #888; width: 26px;
+                text-align: right; flex-shrink: 0; }
+
+  /* ── Reader cards ─────────────────────────────────────── */
+  .reader-card { display: flex; gap: 0.55rem;
+                 align-items: flex-start; margin-bottom: 0.85rem; }
+  .reader-card:last-child { margin-bottom: 0; }
+  .reader-portrait {
+    width: 32px; height: 32px; border-radius: 50%;
+    overflow: hidden; flex-shrink: 0;
+    border: 1.5px solid #c8a64a;
+    background: #1a1a1a;
+  }
+  .reader-portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 15%;
+    display: block;
+  }
+  .reader-body { flex: 1; min-width: 0; }
+  .reader-gen  { font-size: 0.6rem; letter-spacing: 0.15em;
+                 text-transform: uppercase; color: #aaa;
+                 margin-bottom: 0.15rem;
+                 display: flex; gap: 0.4rem; align-items: baseline; }
+  .reader-scores { color: #c8a64a; letter-spacing: 0; font-size: 0.62rem; }
+  .reader-verdict { font-size: 0.7rem; color: #555;
+                    line-height: 1.5; font-style: italic; }
+
+  @media (max-width: 680px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <main class="article"><h1>They Leased the Square to a Mark That Cannot Blush</h1>
+<p>I have the WIRED story open on a laptop that still assumes a person is waiting. An agent, in this new diction, is software that reads, clips, and talks so you never finish the piece. A crawler is the industrial cousin: a program that hits a page, strips the text, and leaves without a fight or a subscription.</p>
+<p>WIRED reports Axios, Every, and Condé Nast now write for those machines. Axios chief revenue officer Jacquelyn Cameron told the magazine the open web is deteriorating and language models mediate the news. The admission, per WIRED: &quot;we want to be where the audience is.&quot; In September at Digiday's Publishing Summit, Axios announced Direct: agent feeds, narrative cut, structured like a Bloomberg terminal, ugly on purpose, not meant for human eyes. Pro Deals merger copy first, then a training feed, then a consumer trough. Chief operating officer Allison Murphy told WIRED crawlers will not scroll for the point. Cameron and Murphy punished the square by routing the story around the public and selling the detour as distribution.</p>
+<p>Condé Nast, WIRED's parent, signed deals so platforms can surface the work. The reporter is inside that compromise; that is the story. The New York Times sued OpenAI and Microsoft in 2023; WIRED says the case continues.</p>
+<p>Every, which WIRED says raised $2 million last year from investors including Reid Hoffman, packs stories with prompts and buttons that hand the piece to Claude or ChatGPT. Founder Dan Shipper told WIRED journalists no longer choose what belongs in the piece. An 8,000-word Codex feature becomes a summary, a podcast, a film. The writer is grain. The agent is the mill.</p>
+<p>WIRED still needs a person on camera. Michelle Seo, a San Diego public-relations consultant, gets water-cooler topics from a Muse agent named Chattiana. Axios Pro Deals costs $2,499 a year; Every costs $288 for a human plus the software that reads instead. Murphy, per WIRED, calls AI a tool, like social video, not an audience. Then they named the product for the bot.</p>
+<p>This is the edge. They knew the square was emptying and they sold feeds to the vacancy. The dream was a human and a room that can still be embarrassed. They did not lose an argument. They leased the chairs to a mark that cannot care if the copy is true, only whether it parses. I am still here. The crawler bought the seat. The house called it journalism.</p>
+<h2>Takeaways</h2>
+<ul>
+<li>Split analytics: human time-on-page versus crawler hits. If only the second number grows, you are stocking a trough.</li>
+<li>Before an agent feed ships, write down who pays, who may train on the copy, and what a human still gets if they never click.</li>
+<li>Put a checkable claim in the first screen. Structured data is distribution. It is not the story, and it is not a defense.</li>
+</ul>
+<div class="meta"><span class="byline">The Gonzo Promptist</span> · <span class="lineage">inspired by Hunter S. Thompson</span> · <span class="date">2026-10-27</span></div>
+<footer>
+<p class="source">Source: <a href="https://www.wired.com/story/ai-agents-are-medias-new-favorite-audience/">AI Agents Are Media’s New Favorite Audience</a></p>
+</footer></main>
+  <aside class="sidebar"><div class="sb-panel">
+<div class="sb-heading">Critic Signal</div>
+<div class="score-row">
+  <span class="score-name">voice</span>
+  <span class="score-track"><span class="score-fill" style="width:80%"></span></span>
+  <span class="score-num">8.0</span>
+</div>
+<div class="score-row">
+  <span class="score-name">humor</span>
+  <span class="score-track"><span class="score-fill" style="width:60%"></span></span>
+  <span class="score-num">6.0</span>
+</div>
+<div class="score-row">
+  <span class="score-name">insight</span>
+  <span class="score-track"><span class="score-fill" style="width:70%"></span></span>
+  <span class="score-num">7.0</span>
+</div>
+<div class="score-row">
+  <span class="score-name">accuracy</span>
+  <span class="score-track"><span class="score-fill" style="width:75%"></span></span>
+  <span class="score-num">7.5</span>
+</div>
+<div class="score-row">
+  <span class="score-name">taste</span>
+  <span class="score-track"><span class="score-fill" style="width:80%"></span></span>
+  <span class="score-num">8.0</span>
+</div>
+</div>
+<div class="sb-panel">
+<div class="sb-heading">Audience</div>
+<div class="reader-card">
+  <div class="reader-portrait"><img src="/images/reader-gen-z.jpg" alt="Gen Z tech worker"></div>
+  <div class="reader-body">
+    <div class="reader-gen">Gen Z tech worker <span class="reader-scores">c6.5 e4.0</span></div>
+    <div class="reader-verdict">no because why is this so long and full of fluff when it could just say 'news sites are basically giving their content to bots and calling it a win,' like just say that and stop acting highbrow</div>
+  </div>
+</div>
+<div class="reader-card">
+  <div class="reader-portrait"><img src="/images/reader-millennial.jpg" alt="Millennial tech worker"></div>
+  <div class="reader-body">
+    <div class="reader-gen">Millennial tech worker <span class="reader-scores">c8.0 e6.0</span></div>
+    <div class="reader-verdict">This is giving startup trauma meets media death spiral vibes, but buried under too much buzzword salad to really punch through.</div>
+  </div>
+</div>
+<div class="reader-card">
+  <div class="reader-portrait"><img src="/images/reader-gen-x.jpg" alt="Gen X tech worker"></div>
+  <div class="reader-body">
+    <div class="reader-gen">Gen X tech worker <span class="reader-scores">c8.0 e7.0</span></div>
+    <div class="reader-verdict">Pretty sharp and clear-eyed on how media's selling out to AI gatekeepers, but the style tips just enough to feel like it's trying to be Thompson without the real bite.</div>
+  </div>
+</div>
+<div class="reader-card">
+  <div class="reader-portrait"><img src="/images/reader-boomer.jpg" alt="Boomer tech executive"></div>
+  <div class="reader-body">
+    <div class="reader-gen">Boomer tech executive <span class="reader-scores">c7.2 e5.1</span></div>
+    <div class="reader-verdict">What is the actual point of this? A jargon-heavy snooze that dances around the erosion of real journalism but never punches through with something actionable or new.</div>
+  </div>
+</div>
+</div></aside>
+</div>
+</body>
+</html>
