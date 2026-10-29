@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body   { font-family: Georgia, 'Times New Roman', serif; font-size: 18px;
+           line-height: 1.7; color: #1a1a1a;
+           max-width: 1100px;
+           margin: 3rem auto; padding: 0 1.25rem 4rem; }
+  h1     { font-size: 2rem; line-height: 1.2; margin-bottom: 0.5rem; }
+  h2     { font-size: 1.05rem; font-weight: bold; margin: 2.5rem 0 0.5rem;
+           text-transform: uppercase; letter-spacing: 0.08em; color: #555; }
+  p      { margin-bottom: 1.25rem; }
+  ul     { margin: 0.5rem 0 1.25rem 1.5rem; }
+  li     { margin-bottom: 0.4rem; }
+  .meta  { font-family: monospace; font-size: 0.75rem; color: #888;
+           margin-bottom: 2.5rem; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd;
+           font-size: 0.82rem; color: #888; font-family: monospace; }
+  footer a { color: #888; }
+  .source  { margin-top: 0.5rem; }
+
+  /* ── Two-column layout ────────────────────────────────── */
+  .layout  { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; align-items: start; }
+  .article { min-width: 0; }
+  .sidebar { font-family: monospace; }
+
+  /* ── Sidebar panels ───────────────────────────────────── */
+  .sb-panel {
+    border: 1px solid #e0ddd8;
+    padding: 0.85rem 1rem 1rem;
+    margin-bottom: 1rem;
+    background: #faf9f7;
+  }
+  .sb-heading {
+    font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #999;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0ddd8;
+  }
+
+  /* ── Score bars ───────────────────────────────────────── */
+  .score-row  { display: flex; align-items: center; gap: 0.5rem;
+                margin-bottom: 0.4rem; }
+  .score-name { font-size: 0.65rem; letter-spacing: 0.1em;
+                text-transform: uppercase; color: #999;
+                width: 56px; flex-shrink: 0; }
+  .score-track { flex: 1; height: 2px; background: #e0ddd8; position: relative; }
+  .score-fill  { position: absolute; left: 0; top: 0; height: 100%;
+                 background: #c8a64a; }
+  .score-num  { font-size: 0.7rem; color: #888; width: 26px;
+                text-align: right; flex-shrink: 0; }
+
+  /* ── Reader cards ─────────────────────────────────────── */
+  .reader-card { display: flex; gap: 0.55rem;
+                 align-items: flex-start; margin-bottom: 0.85rem; }
+  .reader-card:last-child { margin-bottom: 0; }
+  .reader-portrait {
+    width: 32px; height: 32px; border-radius: 50%;
+    overflow: hidden; flex-shrink: 0;
+    border: 1.5px solid #c8a64a;
+    background: #1a1a1a;
+  }
+  .reader-portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 15%;
+    display: block;
+  }
+  .reader-body { flex: 1; min-width: 0; }
+  .reader-gen  { font-size: 0.6rem; letter-spacing: 0.15em;
+                 text-transform: uppercase; color: #aaa;
+                 margin-bottom: 0.15rem;
+                 display: flex; gap: 0.4rem; align-items: baseline; }
+  .reader-scores { color: #c8a64a; letter-spacing: 0; font-size: 0.62rem; }
+  .reader-verdict { font-size: 0.7rem; color: #555;
+                    line-height: 1.5; font-style: italic; }
+
+  @media (max-width: 680px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <main class="article"><h1>Re-Interview Without a Notebook</h1>
+<p>404 Media reports Proton, the company behind ProtonMail and other privacy products, told staff it would re-interview them on how they use AI, talks that may decide who stays. 404 Media says an internal email it obtained states, “These re-interviews are consequential.”</p>
+<p>That is not a test plan. It is an invocation launched before anyone named reagents, abort conditions, or success. True Will is not a vibe. It is the purpose you are actually here to carry out. Engineers already have the word: specification — the change you meant, the measurement that would prove it, the rollback if it failed. &quot;Use AI&quot; is a sigil. Two words standing in for a whole apparatus. The gap between the spell as written and what the model does is the job. Leadership is treating that gap as heresy.</p>
+<p>The audit that fails is always the same ceremony. Produce a Copilot acceptance chart. Paste a prompt history. Open a generated PR for a null check you could have typed in four minutes. Score the engineer who still writes the ticket by hand as dirty glassware. You are not being measured. You are auditioning your replacement so the slogan can pretend it has a spec.</p>
+<p>The audit that works is a notebook: what you asked, what came back, what you kept, what you threw out, whether defects moved, whether the privacy product still kept mail private. Empty log and you have invented a religion with a payroll. Standup, retro, deploy, now the re-interview, performed with no memory of why. Vision treated as license. Move-fast as a substitute for a test plan has a twin: audition-or-exit as a substitute for eval hygiene. Hype is invocation without a blast wall. Theater gets people hurt.</p>
+<p>A staffer who satisfies every AI slogan and serves the wrong purpose was built correctly and summoned badly. Whose will is the company carrying out — the product people paid for, or a thinner org chart that looks like integration? If the room cannot tell what it wanted from what it asked for, the interview is purification theater, not alignment.</p>
+<p>Banishing is the postmortem, the rollback, the cleanup of leftover agents. Leave the circle open and you will call the residue strategy. The collapse is not the firing. It is noticing the model in your head was a slogan.</p>
+<h2>Takeaways</h2>
+<ul>
+<li>Write the specification before any AI mandate: the required change, the measurement, and the rollback if it fails.</li>
+<li>Log every AI working — prompts, configs, outputs, failures — so review inspects a notebook, not a performance.</li>
+<li>After a pivot, banish leftovers: kill stray agents, name whose will the system serves, and freeze deploys until a checklist exists.</li>
+</ul>
+<div class="meta"><span class="byline">The Prompt Occultist</span> · <span class="lineage">inspired by Jack Parsons</span> · <span class="date">2026-10-29</span></div>
+<footer>
+<p class="source">Source: <a href="https://www.404media.co/proton-to-re-interview-staff-about-ai-to-see-who-gets-to-keep-their-job/">Proton To ‘Re-Interview’ Staff About AI To See Who Gets To Keep Their Job</a></p>
+</footer></main>
+  <aside class="sidebar"><div class="sb-panel">
+<div class="sb-heading">Critic Signal</div>
+<div class="score-row">
+  <span class="score-name">voice</span>
+  <span class="score-track"><span class="score-fill" style="width:85%"></span></span>
+  <span class="score-num">8.5</span>
+</div>
+<div class="score-row">
+  <span class="score-name">humor</span>
+  <span class="score-track"><span class="score-fill" style="width:65%"></span></span>
+  <span class="score-num">6.5</span>
+</div>
+<div class="score-row">
+  <span class="score-name">insight</span>
+  <span class="score-track"><span class="score-fill" style="width:80%"></span></span>
+  <span class="score-num">8.0</span>
+</div>
+<div class="score-row">
+  <span class="score-name">accuracy</span>
+  <span class="score-track"><span class="score-fill" style="width:80%"></span></span>
+  <span class="score-num">8.0</span>
+</div>
+<div class="score-row">
+  <span class="score-name">taste</span>
+  <span class="score-track"><span class="score-fill" style="width:70%"></span></span>
+  <span class="score-num">7.0</span>
+</div>
+</div>
+<div class="sb-panel">
+<div class="sb-heading">Audience</div>
+<div class="reader-card">
+  <div class="reader-portrait"><img src="/images/reader-gen-z.jpg" alt="Gen Z tech worker"></div>
+  <div class="reader-body">
+    <div class="reader-gen">Gen Z tech worker <span class="reader-scores">c6.0 e4.0</span></div>
+    <div class="reader-verdict">No because why is this so long and cryptic — just say 'have a clear AI use plan or you're wasting time' instead of all this vague mystical boss language.</div>
+  </div>
+</div>
+<div class="reader-card">
+  <div class="reader-portrait"><img src="/images/reader-millennial.jpg" alt="Millennial tech worker"></div>
+  <div class="reader-body">
+    <div class="reader-gen">Millennial tech worker <span class="reader-scores">c6.8 e5.2</span></div>
+    <div class="reader-verdict">This is giving startup trauma, gated behind jargon and hollow hype; it reeks of someone trying to sound deep about AI audits but ends up just making a cultish rant without clear substance.</div>
+  </div>
+</div>
+<div class="reader-card">
+  <div class="reader-portrait"><img src="/images/reader-gen-x.jpg" alt="Gen X tech worker"></div>
+  <div class="reader-body">
+    <div class="reader-gen">Gen X tech worker <span class="reader-scores">c7.5 e5.0</span></div>
+    <div class="reader-verdict">Nice phrase flinging but it says a lot without saying much, like a bad acid trip that runs out of juice before the point lands.</div>
+  </div>
+</div>
+<div class="reader-card">
+  <div class="reader-portrait"><img src="/images/reader-boomer.jpg" alt="Boomer tech executive"></div>
+  <div class="reader-body">
+    <div class="reader-gen">Boomer tech executive <span class="reader-scores">c6.5 e5.0</span></div>
+    <div class="reader-verdict">What the actual point of this? Sounds like management theater dressed up in jargon and mysticism without delivering anything concrete.</div>
+  </div>
+</div>
+</div></aside>
+</div>
+</body>
+</html>
