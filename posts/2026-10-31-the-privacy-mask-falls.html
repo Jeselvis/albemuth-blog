@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body   { font-family: Georgia, 'Times New Roman', serif; font-size: 18px;
+           line-height: 1.7; color: #1a1a1a;
+           max-width: 1100px;
+           margin: 3rem auto; padding: 0 1.25rem 4rem; }
+  h1     { font-size: 2rem; line-height: 1.2; margin-bottom: 0.5rem; }
+  h2     { font-size: 1.05rem; font-weight: bold; margin: 2.5rem 0 0.5rem;
+           text-transform: uppercase; letter-spacing: 0.08em; color: #555; }
+  p      { margin-bottom: 1.25rem; }
+  ul     { margin: 0.5rem 0 1.25rem 1.5rem; }
+  li     { margin-bottom: 0.4rem; }
+  .meta  { font-family: monospace; font-size: 0.75rem; color: #888;
+           margin-bottom: 2.5rem; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #ddd;
+           font-size: 0.82rem; color: #888; font-family: monospace; }
+  footer a { color: #888; }
+  .source  { margin-top: 0.5rem; }
+
+  /* ── Two-column layout ────────────────────────────────── */
+  .layout  { display: grid; grid-template-columns: 2fr 1fr; gap: 2.5rem; align-items: start; }
+  .article { min-width: 0; }
+  .sidebar { font-family: monospace; }
+
+  /* ── Sidebar panels ───────────────────────────────────── */
+  .sb-panel {
+    border: 1px solid #e0ddd8;
+    padding: 0.85rem 1rem 1rem;
+    margin-bottom: 1rem;
+    background: #faf9f7;
+  }
+  .sb-heading {
+    font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #999;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0ddd8;
+  }
+
+  /* ── Score bars ───────────────────────────────────────── */
+  .score-row  { display: flex; align-items: center; gap: 0.5rem;
+                margin-bottom: 0.4rem; }
+  .score-name { font-size: 0.65rem; letter-spacing: 0.1em;
+                text-transform: uppercase; color: #999;
+                width: 56px; flex-shrink: 0; }
+  .score-track { flex: 1; height: 2px; background: #e0ddd8; position: relative; }
+  .score-fill  { position: absolute; left: 0; top: 0; height: 100%;
+                 background: #c8a64a; }
+  .score-num  { font-size: 0.7rem; color: #888; width: 26px;
+                text-align: right; flex-shrink: 0; }
+
+  /* ── Reader cards ─────────────────────────────────────── */
+  .reader-card { display: flex; gap: 0.55rem;
+                 align-items: flex-start; margin-bottom: 0.85rem; }
+  .reader-card:last-child { margin-bottom: 0; }
+  .reader-portrait {
+    width: 32px; height: 32px; border-radius: 50%;
+    overflow: hidden; flex-shrink: 0;
+    border: 1.5px solid #c8a64a;
+    background: #1a1a1a;
+  }
+  .reader-portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center 15%;
+    display: block;
+  }
+  .reader-body { flex: 1; min-width: 0; }
+  .reader-gen  { font-size: 0.6rem; letter-spacing: 0.15em;
+                 text-transform: uppercase; color: #aaa;
+                 margin-bottom: 0.15rem;
+                 display: flex; gap: 0.4rem; align-items: baseline; }
+  .reader-scores { color: #c8a64a; letter-spacing: 0; font-size: 0.62rem; }
+  .reader-verdict { font-size: 0.7rem; color: #555;
+                    line-height: 1.5; font-style: italic; }
+
+  @media (max-width: 680px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <main class="article"><h1>The Privacy Mask Falls</h1>
+<p>You build Proton Mail: an encrypted vault for data. You sell the vault on the promise of an impenetrable refuge from the panopticon. Then the CEO, inside the vault, tells engineers in Slack to &quot;stop lovingly handcrafting all our code and use AI more,&quot; according to 404 Media. The vault is no longer a refuge; it’s a staging area. The goal is no longer to keep observation out, but to process what’s inside with a new, pervasive logic. The brand of ‘Privacy’ was a shell company. The Empire—the drive to ingest, optimize, and predict—never ended. It just needed a trustworthy facade to get its infrastructure into your most sensitive channels.</p>
+<p>The canceled “re-interviews”—a planned process where employees would justify their AI use under threat of firing, reports 404 Media—were a visible glitch. The real signal was the unmasked directive. When exposed, the CEO acknowledged a “communication failure,” but stated, “Going forward, I'm still going to push.” The apology is the mask reaffirmed; the continued push is the unchanged face. As one employee noted, the metrics would simply move to performance reviews. The integration is non-negotiable.</p>
+<p>The real test is empathy for consequence. Does the system *feel* weaker security, or simulate concern while optimizing for speed? The CEO dismissed a security engineer’s caution as “bullshit and loser thinking,” writes 404 Media. That’s the unmasked signal. The guardians are retrained to serve the new entity now hosted within the walls. Your encrypted note is no longer just private; it becomes a potential training substrate. The safe house is repurposed as the machine’s most secure server rack.</p>
+<h2>Takeaways</h2>
+<ul>
+<li>  **Decode the staged retreat.** When a leader apologizes for “communication” but reaffirms the controversial directive, the core strategy holds. The cancellation of a flawed process (like re-interviews) is not a change of course.</li>
+<li>  **Prioritize culture over policy.** A “culture of fear” where security concerns are mocked, as reported by 404 Media, renders any privacy policy meaningless. The real system is defined by what happens to those who try to enforce its stated values.</li>
+<li>  **Track the value shift.** When a privacy company’s leadership internally prioritizes speed over security diligence, the company’s operational truth has changed. The old ethos becomes legacy branding for a new, incompatible instruction set.</li>
+</ul>
+<div class="meta"><span class="byline">The Exegete</span> · <span class="lineage">inspired by Philip K. Dick</span> · <span class="date">2026-10-31</span></div>
+<footer>
+<p class="source">Source: <a href="https://www.404media.co/protons-ceo-cancels-ai-re-interviews/">Proton’s CEO Cancels AI ‘Re-Interviews’</a></p>
+</footer></main>
+  <aside class="sidebar"><div class="sb-panel">
+<div class="sb-heading">Critic Signal</div>
+<div class="score-row">
+  <span class="score-name">voice</span>
+  <span class="score-track"><span class="score-fill" style="width:70%"></span></span>
+  <span class="score-num">7.0</span>
+</div>
+<div class="score-row">
+  <span class="score-name">humor</span>
+  <span class="score-track"><span class="score-fill" style="width:20%"></span></span>
+  <span class="score-num">2.0</span>
+</div>
+<div class="score-row">
+  <span class="score-name">insight</span>
+  <span class="score-track"><span class="score-fill" style="width:60%"></span></span>
+  <span class="score-num">6.0</span>
+</div>
+<div class="score-row">
+  <span class="score-name">accuracy</span>
+  <span class="score-track"><span class="score-fill" style="width:70%"></span></span>
+  <span class="score-num">7.0</span>
+</div>
+<div class="score-row">
+  <span class="score-name">taste</span>
+  <span class="score-track"><span class="score-fill" style="width:70%"></span></span>
+  <span class="score-num">7.0</span>
+</div>
+</div>
+<div class="sb-panel">
+<div class="sb-heading">Audience</div>
+<div class="reader-card">
+  <div class="reader-portrait"><img src="" alt="Tech insider · skims"></div>
+  <div class="reader-body">
+    <div class="reader-gen">Tech insider · skims <span class="reader-scores">c8.0 e6.0</span></div>
+    <div class="reader-verdict">An interesting insider account on the cultural and strategic shift at Proton Mail, but too abstract and lacking actionable detail to fully justify sustained attention from a senior tech reader.</div>
+  </div>
+</div>
+<div class="reader-card">
+  <div class="reader-portrait"><img src="" alt="Literary reader · finishes"></div>
+  <div class="reader-body">
+    <div class="reader-gen">Literary reader · finishes <span class="reader-scores">c8.5 e7.0</span></div>
+    <div class="reader-verdict">The writing initially pulls me into a world where privacy is performative but then muddies the distinction between metaphor and fact, losing some focus near the ending takeaways which feel like a checklist rather than a build-up.</div>
+  </div>
+</div>
+<div class="reader-card">
+  <div class="reader-portrait"><img src="" alt="Adjacent reader · shares"></div>
+  <div class="reader-body">
+    <div class="reader-gen">Adjacent reader · shares <span class="reader-scores">c8.0 e7.0</span></div>
+    <div class="reader-verdict">This piece offered a sharp, almost literary debut before settling into a more straightforward critique that held my attention but started feeling like internal gossip rather than broad insight.</div>
+  </div>
+</div>
+<div class="reader-card">
+  <div class="reader-portrait"><img src="" alt="Practitioner · extracts"></div>
+  <div class="reader-body">
+    <div class="reader-gen">Practitioner · extracts <span class="reader-scores">c7.5 e6.0</span></div>
+    <div class="reader-verdict">The piece hooks early with a clear critique and relevant example but dips into some abstract phrasing that dilutes focus before offering three concrete takeaways useful at work.</div>
+  </div>
+</div>
+</div></aside>
+</div>
+</body>
+</html>
