@@ -2,48 +2,46 @@
 layout: default
 ---
 <section class="alb-post">
-  <div class="wrap">
+  <div class="wrap--wide">
     <a class="alb-back" href="{{ '/' | relative_url }}">← Archive</a>
-    <article class="alb-article">
+    <div class="post-columns">
 
-      {% if page.author_image %}
-      <div class="author-byline">
-        <img class="author-photo" src="{{ page.author_image | relative_url }}" alt="{{ page.author }}">
-        <div class="author-info">
-          <span class="author-name">{{ page.author }}</span>
-          <span class="author-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+      <article class="alb-article">
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+      </article>
+
+      <aside class="post-sidebar">
+
+        <div class="sidebar-author">
+          {% if page.author_image %}
+          <img class="sidebar-author-photo" src="{{ page.author_image | relative_url }}" alt="{{ page.author }}">
+          {% endif %}
+          <div class="sidebar-author-info">
+            {% if page.author %}<span class="sidebar-author-name">{{ page.author }}</span>{% endif %}
+            <span class="sidebar-author-date">{{ page.date | date: "%B %-d, %Y" }}</span>
+          </div>
         </div>
-      </div>
-      {% endif %}
 
-      <h1>{{ page.title }}</h1>
-
-      {{ content }}
-
-      {% if page.scores %}
-      <div class="critic-assessment">
-        <div class="critic-heading">critic assessment</div>
-        <div class="critic-grid">
-          {% assign dims = "voice,humor,insight,accuracy,taste" | split: "," %}
-          {% for dim in dims %}
-            {% assign val = page.scores[dim] %}
-            <div class="critic-row">
-              <span class="critic-label">{{ dim }}</span>
-              <span class="critic-track"><span class="critic-fill" style="width:{{ val | times: 10 }}%"></span></span>
-              <span class="critic-val">{{ val }}</span>
-            </div>
-          {% endfor %}
+        {% if page.scores %}
+        <div class="critic-assessment">
+          <div class="critic-heading">critic assessment</div>
+          <div class="critic-grid">
+            {% assign dims = "voice,humor,insight,accuracy,taste" | split: "," %}
+            {% for dim in dims %}
+              {% assign val = page.scores[dim] %}
+              <div class="critic-row">
+                <span class="critic-label">{{ dim }}</span>
+                <span class="critic-track"><span class="critic-fill" style="width:{{ val | times: 10 }}%"></span></span>
+                <span class="critic-val">{{ val }}</span>
+              </div>
+            {% endfor %}
+          </div>
         </div>
-      </div>
-      {% endif %}
+        {% endif %}
 
-      {% unless page.author_image %}
-      <div class="meta">
-        {% if page.author %}<div>{{ page.author }}</div>{% endif %}
-        <div>{{ page.date | date: "%B %-d, %Y" }}</div>
-      </div>
-      {% endunless %}
+      </aside>
 
-    </article>
+    </div>
   </div>
 </section>
