@@ -1,0 +1,520 @@
+---
+layout: default
+title: Analytics
+---
+<style>
+/* ── Analytics page ──────────────────────────────────────────────── */
+
+.anl-wrap { padding-block: 56px 96px; }
+
+.anl-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.anl-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: normal;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+}
+
+/* ── Stat cards ─────────────────────────────────────────────────── */
+
+.anl-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--rule-strong);
+  border: 1px solid var(--rule-strong);
+  margin-bottom: 2.5rem;
+}
+
+.anl-stat {
+  background: var(--paper);
+  padding: 1.25rem 1.5rem;
+}
+
+.anl-stat-value {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.anl-stat-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.35rem;
+}
+
+/* ── Cards ──────────────────────────────────────────────────────── */
+
+.anl-card {
+  border: 1px solid var(--rule-strong);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background: var(--paper);
+}
+
+.anl-card-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ── Charts grid ────────────────────────────────────────────────── */
+
+.anl-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.anl-full { grid-column: 1 / -1; }
+
+/* ── Takeaways ──────────────────────────────────────────────────── */
+
+.anl-takeaway-run {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.anl-takeaway-run:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.anl-takeaway-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.anl-takeaway-topic {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+.anl-takeaways-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.anl-takeaways-list li {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  padding: 0.3rem 0 0.3rem 1rem;
+  border-left: 2px solid var(--accent);
+  margin-bottom: 0.4rem;
+}
+
+/* ── Run list ───────────────────────────────────────────────────── */
+
+.anl-run-list { list-style: none; margin: 0; padding: 0; }
+
+.anl-run-row {
+  display: grid;
+  grid-template-columns: 90px 1fr auto auto;
+  align-items: baseline;
+  gap: 0 1.25rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 14px;
+}
+.anl-run-row:last-child { border-bottom: none; }
+
+.anl-run-date {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  padding-top: 2px;
+}
+
+.anl-run-topic {
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.anl-run-lens {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.anl-run-score {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.anl-run-score.pass { color: #276749; }
+.anl-run-score.fail { color: #9b2335; }
+
+/* ── Empty ──────────────────────────────────────────────────────── */
+
+.anl-empty {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  padding: 1rem 0;
+}
+
+@media (max-width: 700px) {
+  .anl-stats { grid-template-columns: 1fr 1fr; }
+  .anl-grid-2 { grid-template-columns: 1fr; }
+  .anl-run-row { grid-template-columns: 76px 1fr auto; }
+  .anl-run-lens { display: none; }
+}
+</style>
+
+<section class="alb-analytics">
+  <div class="wrap--wide anl-wrap">
+
+    <p class="anl-eyebrow">Signal log</p>
+    <h1 class="anl-title">Analytics</h1>
+
+    <div class="anl-stats" id="anl-stats">
+      <div class="anl-stat"><div class="anl-stat-value" id="sv-runs">—</div><div class="anl-stat-label">Transmissions</div></div>
+      <div class="anl-stat"><div class="anl-stat-value" id="sv-avg">—</div><div class="anl-stat-label">Avg final score</div></div>
+      <div class="anl-stat"><div class="anl-stat-value" id="sv-pass">—</div><div class="anl-stat-label">Pass rate</div></div>
+      <div class="anl-stat"><div class="anl-stat-value" id="sv-drafts">—</div><div class="anl-stat-label">Avg drafts</div></div>
+    </div>
+
+    <div class="anl-card anl-full" id="scores-wrap">
+      <div class="anl-card-label">Score trends — final round per transmission</div>
+      <canvas id="scores-chart" height="80"></canvas>
+    </div>
+
+    <div class="anl-grid-2">
+      <div class="anl-card">
+        <div class="anl-card-label">Lens distribution</div>
+        <canvas id="lens-chart" height="220"></canvas>
+      </div>
+      <div class="anl-card">
+        <div class="anl-card-label">Drafts per transmission</div>
+        <canvas id="drafts-chart" height="220"></canvas>
+      </div>
+    </div>
+
+    <div class="anl-grid-2" id="reader-row" style="display:none">
+      <div class="anl-card">
+        <div class="anl-card-label" id="reader-profiles-label">Reader profiles — avg comprehension &amp; engagement</div>
+        <canvas id="reader-profiles-chart" height="220"></canvas>
+      </div>
+      <div class="anl-card">
+        <div class="anl-card-label">Critic score vs reader engagement — per run</div>
+        <canvas id="critic-vs-reader-chart" height="220"></canvas>
+      </div>
+    </div>
+
+    <div class="anl-card" id="takeaways-card" style="display:none">
+      <div class="anl-card-label">Recent takeaways</div>
+      <div id="takeaways-body"></div>
+    </div>
+
+    <div class="anl-card">
+      <div class="anl-card-label">All transmissions</div>
+      <ul class="anl-run-list" id="run-list"><li class="anl-empty">Loading…</li></ul>
+    </div>
+
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+<script>
+// ── Colours (light theme) ────────────────────────────────────────────────────
+const PAPER    = '#ECE8DF';
+const INK      = '#17171A';
+const MUTED    = '#5A554C';
+const RULE     = 'rgba(23,23,26,0.13)';
+const ACCENT   = '#C23B22';
+
+const DIM_COLORS = {
+  voice:    '#8B4513',
+  humor:    '#C23B22',
+  insight:  '#1D6FA4',
+  accuracy: '#276749',
+  taste:    '#6B46C1',
+};
+const LENS_COLORS = {
+  burroughs: '#C23B22',
+  thompson:  '#D4845A',
+  parsons:   '#1D6FA4',
+  pkd:       '#6B46C1',
+};
+const READER_ORDER  = ['sharp-skimmer','deep-reader','smart-outsider','applied-reader'];
+const READER_LABELS = {
+  'sharp-skimmer':  'Insider · skims',
+  'deep-reader':    'Literary · finishes',
+  'smart-outsider': 'Adjacent · shares',
+  'applied-reader': 'Practitioner · extracts',
+};
+const DIMS = ['voice','humor','insight','accuracy','taste'];
+
+// ── Chart.js defaults (light) ────────────────────────────────────────────────
+Chart.defaults.color          = MUTED;
+Chart.defaults.borderColor    = RULE;
+Chart.defaults.font.family    = "'IBM Plex Mono', ui-monospace, monospace";
+Chart.defaults.font.size      = 11;
+Chart.defaults.plugins.legend.labels.boxWidth  = 10;
+Chart.defaults.plugins.legend.labels.padding   = 16;
+Chart.defaults.plugins.tooltip.cornerRadius    = 2;
+Chart.defaults.plugins.tooltip.padding         = 8;
+Chart.defaults.plugins.tooltip.backgroundColor = INK;
+Chart.defaults.plugins.tooltip.borderColor     = RULE;
+Chart.defaults.plugins.tooltip.borderWidth     = 1;
+Chart.defaults.plugins.tooltip.titleColor      = '#ECE8DF';
+Chart.defaults.plugins.tooltip.bodyColor       = '#ECE8DF';
+
+// ── Helpers ──────────────────────────────────────────────────────────────────
+const avg    = arr => arr.length ? arr.reduce((s,v) => s+v, 0) / arr.length : 0;
+const round1 = n   => Math.round(n * 10) / 10;
+
+function computePass(scores) {
+  if (!scores) return false;
+  const vals = DIMS.map(d => scores[d]).filter(v => typeof v === 'number');
+  return vals.length && avg(vals) >= 7 && Math.min(...vals) >= 5;
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── Stats ────────────────────────────────────────────────────────────────────
+function renderStats(runs) {
+  const avgs      = runs.map(r => { const v = DIMS.map(d => r.scores?.[d]).filter(v => typeof v === 'number'); return v.length ? avg(v) : null; }).filter(v => v !== null);
+  const passCount = runs.filter(r => computePass(r.scores)).length;
+
+  document.getElementById('sv-runs').textContent   = runs.length;
+  document.getElementById('sv-avg').textContent    = avgs.length   ? round1(avg(avgs)) : '—';
+  document.getElementById('sv-pass').textContent   = runs.length   ? Math.round(passCount / runs.length * 100) + '%' : '—';
+  const withDrafts = runs.filter(r => r.drafts);
+  document.getElementById('sv-drafts').textContent = withDrafts.length ? round1(avg(withDrafts.map(r => r.drafts))) : '—';
+}
+
+// ── Score trends ─────────────────────────────────────────────────────────────
+function buildScoresChart(runs) {
+  const labels = runs.map(r => r.date);
+  new Chart(document.getElementById('scores-chart'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: DIMS.map(dim => ({
+        label:                dim,
+        data:                 runs.map(r => r.scores?.[dim] ?? null),
+        borderColor:          DIM_COLORS[dim],
+        backgroundColor:      DIM_COLORS[dim] + '18',
+        pointBackgroundColor: DIM_COLORS[dim],
+        pointRadius: 3, pointHoverRadius: 5,
+        borderWidth: 1.5, tension: 0.25, spanGaps: true,
+      })),
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      scales: {
+        x: { ticks: { maxRotation: 45, font: { size: 10 } }, grid: { color: RULE } },
+        y: { min: 0, max: 10, ticks: { stepSize: 2 }, grid: { color: RULE } },
+      },
+      plugins: {
+        legend: { position: 'top', align: 'end' },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.dataset.label}: ${ctx.parsed.y?.toFixed(1) ?? '—'}` } },
+      },
+    },
+  });
+}
+
+// ── Lens donut ────────────────────────────────────────────────────────────────
+function buildLensChart(runs) {
+  const counts = {};
+  for (const r of runs) counts[r.lens] = (counts[r.lens] ?? 0) + 1;
+  const lenses = Object.keys(counts);
+  const colors = lenses.map(l => LENS_COLORS[l] ?? MUTED);
+  new Chart(document.getElementById('lens-chart'), {
+    type: 'doughnut',
+    data: {
+      labels: lenses,
+      datasets: [{ data: lenses.map(l => counts[l]), backgroundColor: colors.map(c => c+'cc'), borderColor: colors, borderWidth: 1, hoverOffset: 4 }],
+    },
+    options: {
+      responsive: true, cutout: '60%',
+      plugins: {
+        legend: { position: 'bottom' },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.parsed} run${ctx.parsed !== 1 ? 's' : ''}` } },
+      },
+    },
+  });
+}
+
+// ── Drafts bar ────────────────────────────────────────────────────────────────
+function buildDraftsChart(runs) {
+  const withDrafts = runs.filter(r => r.drafts);
+  if (!withDrafts.length) return;
+  const maxD    = Math.max(...withDrafts.map(r => r.drafts), 3);
+  const buckets = Array.from({ length: maxD }, (_, i) => i + 1);
+  new Chart(document.getElementById('drafts-chart'), {
+    type: 'bar',
+    data: {
+      labels: buckets.map(n => `${n} draft${n !== 1 ? 's' : ''}`),
+      datasets: [{ label: 'Runs', data: buckets.map(n => withDrafts.filter(r => r.drafts === n).length), backgroundColor: ACCENT + '33', borderColor: ACCENT, borderWidth: 1 }],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        x: { grid: { color: RULE } },
+        y: { min: 0, ticks: { stepSize: 1, precision: 0 }, grid: { color: RULE } },
+      },
+      plugins: { legend: { display: false } },
+    },
+  });
+}
+
+// ── Reader charts ─────────────────────────────────────────────────────────────
+function buildReaderCharts(runs) {
+  const withReaders = runs.filter(r => r.readers?.length);
+  if (!withReaders.length) return;
+  document.getElementById('reader-row').style.display = '';
+
+  document.getElementById('reader-profiles-label').textContent =
+    `Reader profiles — avg comprehension & engagement (${withReaders.length} run${withReaders.length !== 1 ? 's' : ''})`;
+
+  const compByProfile = READER_ORDER.map(id => {
+    const vals = withReaders.flatMap(r => r.readers.filter(rd => rd.id === id).map(rd => rd.comprehension)).filter(v => typeof v === 'number');
+    return vals.length ? round1(avg(vals)) : null;
+  });
+  const engByProfile = READER_ORDER.map(id => {
+    const vals = withReaders.flatMap(r => r.readers.filter(rd => rd.id === id).map(rd => rd.engagement)).filter(v => typeof v === 'number');
+    return vals.length ? round1(avg(vals)) : null;
+  });
+
+  new Chart(document.getElementById('reader-profiles-chart'), {
+    type: 'bar',
+    data: {
+      labels: READER_ORDER.map(id => READER_LABELS[id] ?? id),
+      datasets: [
+        { label: 'Comprehension', data: compByProfile, backgroundColor: '#1D6FA433', borderColor: '#1D6FA4', borderWidth: 1 },
+        { label: 'Engagement',    data: engByProfile,  backgroundColor: '#6B46C133', borderColor: '#6B46C1', borderWidth: 1 },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: { x: { grid: { color: RULE } }, y: { min: 0, max: 10, ticks: { stepSize: 2 }, grid: { color: RULE } } },
+      plugins: { legend: { position: 'top', align: 'end' } },
+    },
+  });
+
+  const runLabels  = withReaders.map(r => r.date);
+  const criticAvgs = withReaders.map(r => { const v = DIMS.map(d => r.scores?.[d]).filter(v => typeof v === 'number'); return v.length ? round1(avg(v)) : null; });
+  const runComp    = withReaders.map(r => { const v = r.readers.map(rd => rd.comprehension).filter(v => typeof v === 'number'); return v.length ? round1(avg(v)) : null; });
+  const runEng     = withReaders.map(r => { const v = r.readers.map(rd => rd.engagement).filter(v => typeof v === 'number');    return v.length ? round1(avg(v)) : null; });
+
+  new Chart(document.getElementById('critic-vs-reader-chart'), {
+    type: 'bar',
+    data: {
+      labels: runLabels,
+      datasets: [
+        { label: 'Critic avg',           data: criticAvgs, backgroundColor: ACCENT+'33',   borderColor: ACCENT,    borderWidth: 1 },
+        { label: 'Reader comprehension', data: runComp,    backgroundColor: '#1D6FA433',   borderColor: '#1D6FA4', borderWidth: 1 },
+        { label: 'Reader engagement',    data: runEng,     backgroundColor: '#6B46C133',   borderColor: '#6B46C1', borderWidth: 1 },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        x: { ticks: { maxRotation: 45, font: { size: 10 } }, grid: { color: RULE } },
+        y: { min: 0, max: 10, ticks: { stepSize: 2 }, grid: { color: RULE } },
+      },
+      plugins: { legend: { position: 'top', align: 'end' } },
+    },
+  });
+}
+
+// ── Takeaways panel ──────────────────────────────────────────────────────────
+function renderTakeaways(runs) {
+  const withTakeaways = [...runs].reverse().filter(r => r.takeaways?.length);
+  if (!withTakeaways.length) return;
+  document.getElementById('takeaways-card').style.display = '';
+  const body = document.getElementById('takeaways-body');
+  body.innerHTML = withTakeaways.slice(0, 5).map(r => `
+    <div class="anl-takeaway-run">
+      <div class="anl-takeaway-meta">${esc(r.date)} · ${esc(r.lens)}</div>
+      <div class="anl-takeaway-topic">${esc(r.topic)}</div>
+      <ul class="anl-takeaways-list">
+        ${r.takeaways.map(t => `<li>${esc(t)}</li>`).join('')}
+      </ul>
+    </div>
+  `).join('');
+}
+
+// ── Run list ─────────────────────────────────────────────────────────────────
+function renderRunList(runs) {
+  const list = document.getElementById('run-list');
+  if (!runs.length) { list.innerHTML = '<li class="anl-empty">No transmissions yet.</li>'; return; }
+  list.innerHTML = [...runs].reverse().map(r => {
+    const passVals = DIMS.map(d => r.scores?.[d]).filter(v => typeof v === 'number');
+    const scoreStr = passVals.length ? round1(avg(passVals)).toFixed(1) : '—';
+    const isPass   = computePass(r.scores);
+    const postUrl  = r.postUrl || null;
+    const topicHtml = postUrl
+      ? `<a class="anl-run-topic" href="${esc(postUrl)}" style="color:inherit;text-decoration:none;">${esc(r.topic)}</a>`
+      : `<span class="anl-run-topic">${esc(r.topic)}</span>`;
+    return `
+      <li class="anl-run-row">
+        <span class="anl-run-date">${esc(r.date)}</span>
+        ${topicHtml}
+        <span class="anl-run-lens">${esc(r.lens)}</span>
+        <span class="anl-run-score ${isPass ? 'pass' : 'fail'}">${scoreStr}</span>
+      </li>`;
+  }).join('');
+}
+
+// ── Init ─────────────────────────────────────────────────────────────────────
+async function init() {
+  let logs;
+  try {
+    const base = document.querySelector('base')?.href ?? document.location.origin + document.location.pathname.replace(/\/[^/]*$/, '/');
+    logs = await fetch('data/logs.json').then(r => r.json());
+  } catch (err) {
+    document.getElementById('run-list').innerHTML = `<li class="anl-empty">Could not load data: ${err}</li>`;
+    return;
+  }
+
+  renderStats(logs);
+  buildScoresChart(logs);
+  buildLensChart(logs);
+  buildDraftsChart(logs);
+  buildReaderCharts(logs);
+  renderTakeaways(logs);
+  renderRunList(logs);
+}
+
+init().catch(console.error);
+</script>
