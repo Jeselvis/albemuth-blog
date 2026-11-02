@@ -1823,5 +1823,18 @@
       "lens": "pkd",
       "attempts": 1
     }
+  },
+  {
+    "date": "2026-11-02",
+    "title": "The Autodoxer Completes the File",
+    "lens": "burroughs",
+    "postUrl": "https://Jeselvis.github.io/albemuth-blog/2026/11/02/the-autodoxer-completes-the-file/",
+    "scores": {
+      "voice": 7,
+      "humor": 0,
+      "insight": 7,
+      "accuracy": 8,
+      "taste": 6.5
+    }
   }
 ]
