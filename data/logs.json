@@ -1836,5 +1836,18 @@
       "accuracy": 8,
       "taste": 6.5
     }
+  },
+  {
+    "date": "2026-11-04",
+    "title": "Buried Clouds",
+    "lens": "pkd",
+    "postUrl": "https://Jeselvis.github.io/albemuth-blog/2026/11/04/buried-clouds/",
+    "scores": {
+      "voice": 7.5,
+      "humor": 3,
+      "insight": 7,
+      "accuracy": 8,
+      "taste": 7
+    }
   }
 ]
